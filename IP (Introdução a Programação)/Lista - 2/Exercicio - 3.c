@@ -6,7 +6,7 @@
 int main(int argc, char *argv[]) {
 	 int N = 0, desejaSair = 0, divisivelQuatro = 0, divisivelSete = 0, divisivelTreze = 0;
 	 
-	  do {
+	do {
         printf("Digite a quantidade de numeros a serem digitados (deve ser maior que 0): ");
         scanf("%d", &N);
 
@@ -15,7 +15,7 @@ int main(int argc, char *argv[]) {
         }
     } while (N <= 0);
 	 
-	 while(desejaSair == 0){
+	while(desejaSair == 0){
      	if (N % 4 == 0) {
      		divisivelQuatro++; 
 		};
@@ -35,9 +35,8 @@ int main(int argc, char *argv[]) {
      		printf("Digite um numero inteiro positivo:");	
      		scanf("%d", &N);
 		}
-	 };
+	};
 	
-
   	printf("\n Divisivel quatro = %d\n", divisivelQuatro);
   	printf("\n Divisivel sete = %d\n", divisivelSete);
   	printf("\n Divisivel treze = %d\n", divisivelTreze);

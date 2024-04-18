@@ -24,18 +24,18 @@ int main(int argc, char *argv[]) {
   	printf("Digite um numero inteiro positivo: ");
   	scanf("%d", &N);
   	
-	if(N > 0){
-  		if(maiorNumero < N){
-  			maiorNumero = N;		
-			};
+	  if(N > 0){
+  	  if(maiorNumero < N){
+  		  maiorNumero = N;		
+		  };
 	
-		if(menorNumero > N){
-  			menorNumero = N;		
-		};
+		  if(menorNumero > N){
+  		  menorNumero = N;		
+		  };
   		
-        soma = soma + N;
-        contador++;
-        media = (float)soma / contador;
+      soma = soma + N;
+      contador++;
+      media = (float)soma / contador;
     }
   };
   
