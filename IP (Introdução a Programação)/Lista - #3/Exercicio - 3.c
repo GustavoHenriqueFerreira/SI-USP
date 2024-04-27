@@ -30,11 +30,11 @@ int main(int argc, char const *argv[])
     short int numero, digito;
 
     do {
-        printf("Digite o numero inteiro positivo para verificar repeticoes nele: ");
+        printf("Digite um numero inteiro positivo para verificar repeticoes nele: ");
         scanf("%hd", &numero);
     } while (numero <= 0);
 
-    printf("Digite o digito de um unico digito: ");
+    printf("Digite um numero de um unico digito: ");
     scanf("%hd", &digito);
 
     verificarRepeticoesNumero(numero, digito);
