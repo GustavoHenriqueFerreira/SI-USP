@@ -3,7 +3,7 @@
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-int verificarPalindromo(int palindromo) {
+int verificarPalindromo(short int palindromo) {
     if (palindromo <= 0){
         printf("Numero não é positivo");
         return 0;
@@ -32,9 +32,9 @@ int main(int argc, char const *argv[])
     scanf("%hd", &palindromo);
 
     if (verificarPalindromo(palindromo)) {
-        printf("%d e um palindromo\n", palindromo);
+        printf("%hd e um palindromo\n", palindromo);
     } else {
-        printf("%d nao e um palindromo\n", palindromo);
+        printf("%hd nao e um palindromo\n", palindromo);
     }
 
     return 0;
