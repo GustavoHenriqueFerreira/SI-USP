@@ -168,11 +168,13 @@ int main(int argc, char *argv[])
 
   /* Parte - b */
   ordernarVetor(tamanhoPrimeiroVetor, primeiroVetor);
+  /* Parte - d */
   printf("Ordenado - Primeiro Vetor: ");
   listarVetor(primeiroVetor, tamanhoPrimeiroVetor);
 
-  /* Parte - d */
+  /* Parte - b */
   ordernarVetor(tamanhoSegundoVetor, segundoVetor);
+  /* Parte - d */
   printf("Ordenado - Segundo Vetor: ");
   listarVetor(segundoVetor, tamanhoSegundoVetor);
 
