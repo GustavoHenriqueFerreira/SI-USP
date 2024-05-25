@@ -233,9 +233,17 @@ int main(int argc, char *argv[])
   encontrarRepeticoes(primeiroVetor, tamanhoPrimeiroVetor, segundoVetor, tamanhoSegundoVetor, quartoVetor, &tamanhoRealQuartoVetor);
 
   /* Parte - d */
-  /* Parte - e */
-  printf("Repetiram duas vezes (Primeiro e o Segundo vetor) - Quarto Vetor: ");
-  listarVetor(quartoVetor, tamanhoRealQuartoVetor);
+  if (tamanhoRealQuartoVetor != 0)
+  {
+    printf("Repetiram duas vezes (Primeiro e o Segundo vetor) - Quarto Vetor: ");
+    listarVetor(quartoVetor, tamanhoRealQuartoVetor);
+    /* Parte - e */
+    printf("Quantidade de repeticoes: %d\n", tamanhoRealQuartoVetor);
+  }
+  else
+  {
+    printf("Repetiram duas vezes (Primeiro e o Segundo vetor) - Quarto Vetor: Nenhum elemento\n");
+  }
 
   return 0;
 }
