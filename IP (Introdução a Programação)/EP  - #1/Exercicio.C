@@ -1,50 +1,71 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
-
+// Função para inserir valores no vetor até o tamanho máximo especificado
 int insercaoValoresTamanhoVetor(int tamanhoMaximo, int vetor[])
 {
-  int tamanhoVetor;
+  int tamanhoVetor = 0; // Contador para o tamanho real do vetor
   printf("Digite os elementos do vetor:\n");
   for (int i = 0; i < tamanhoMaximo; i++)
   {
-    tamanhoVetor = i;
     printf("Elemento %d: ", i + 1);
     int temp;
-    scanf("%d", &temp);
+    scanf("%d", &temp); // Armazena o valor digitado temporariamente
 
+    // Verifica se o elemento é duplicado
+    int duplicado = 0;
     for (int j = 0; j < i; j++)
     {
       if (temp == vetor[j])
       {
-        printf("Por favor digite um numero diferente dos usados\n");
-        printf("Elemento %d: ", i + 1);
-        scanf("%d", &temp);
-        j = 0; // Reiniciando j para verificar novamente desde o início
+        duplicado = 1;
+        break;
       }
     }
 
-    if (temp < 0 || i == tamanhoMaximo - 1)
+    // Se o elemento é duplicado, pede um novo valor
+    if (duplicado)
     {
-      printf("Insercao parada devido ao tamanho do vetor ou pelo numero ser negativo\n");
+      printf("Por favor digite um numero diferente dos usados\n");
+      i--;      // Decrementa i para tentar novamente essa posição
+      continue; // Salta para a próxima iteração do loop, assim não tem problemas de inserção de valores
+    }
+
+    // Se o número é negativo, para a inserção
+    if (temp < 0)
+    {
+      printf("Insercao parada devido ao numero ser negativo\n");
       break;
     }
 
+    // Adiciona o elemento ao vetor e incrementa o tamanho
     vetor[i] = temp;
+    tamanhoVetor++;
+
+    // Se alcançou o tamanho máximo do vetor, para a inserção
+    if (i == tamanhoMaximo - 1)
+    {
+      printf("Insercao parada devido ao tamanho do vetor\n");
+      break;
+    }
   }
 
-  return tamanhoVetor;
+  return tamanhoVetor; // Retorna o tamanho real do vetor
 }
 
+// Função para ordenar o vetor usando Bubble Sort
 void ordernarVetor(int tamanho, int *vetor)
 {
-  for (int i = 0; i < tamanho; i++)
+  // Itera sobre todos os elementos do vetor
+  for (int i = 0; i < tamanho - 1; i++)
   {
-    for (int j = 0; j < tamanho - i; j++)
+    // Para cada elemento, compara-o com os elementos subsequentes
+    for (int j = 0; j < tamanho - i - 1; j++)
     {
+      // Se o elemento atual é maior que o próximo elemento
       if (vetor[j] > vetor[j + 1])
       {
+        // Troca os elementos de posição
         int temp = vetor[j];
         vetor[j] = vetor[j + 1];
         vetor[j + 1] = temp;
@@ -53,14 +74,17 @@ void ordernarVetor(int tamanho, int *vetor)
   }
 }
 
+// Função para mesclar dois vetores ordenados em um terceiro vetor sem duplicatas
 void mergeVetores(int *vetor1, int tamanho1, int *vetor2, int tamanho2, int *vetorResultado, int *tamanhoResultado)
 {
-  int i = 0, j = 0, k = 0;
+  int i = 0, j = 0, k = 0; // Índices para vetor1, vetor2 e vetorResultado
 
+  // Mescla os vetores enquanto há elementos em ambos
   while (i < tamanho1 && j < tamanho2)
   {
     if (vetor1[i] < vetor2[j])
     {
+      // Adiciona o elemento de vetor1 se não for duplicado
       if (k == 0 || vetorResultado[k - 1] != vetor1[i])
       {
         vetorResultado[k++] = vetor1[i];
@@ -69,14 +93,16 @@ void mergeVetores(int *vetor1, int tamanho1, int *vetor2, int tamanho2, int *vet
     }
     else if (vetor2[j] < vetor1[i])
     {
+      // Adiciona o elemento de vetor2 se não for duplicado
       if (k == 0 || vetorResultado[k - 1] != vetor2[j])
       {
         vetorResultado[k++] = vetor2[j];
       }
       j++;
     }
-    else // Se os elementos forem iguais
+    else
     {
+      // Adiciona o elemento comum uma vez só
       if (k == 0 || vetorResultado[k - 1] != vetor1[i])
       {
         vetorResultado[k++] = vetor1[i];
@@ -86,6 +112,7 @@ void mergeVetores(int *vetor1, int tamanho1, int *vetor2, int tamanho2, int *vet
     }
   }
 
+  // Adiciona os elementos restantes de vetor1
   while (i < tamanho1)
   {
     if (k == 0 || vetorResultado[k - 1] != vetor1[i])
@@ -95,6 +122,7 @@ void mergeVetores(int *vetor1, int tamanho1, int *vetor2, int tamanho2, int *vet
     i++;
   }
 
+  // Adiciona os elementos restantes de vetor2
   while (j < tamanho2)
   {
     if (k == 0 || vetorResultado[k - 1] != vetor2[j])
@@ -104,20 +132,23 @@ void mergeVetores(int *vetor1, int tamanho1, int *vetor2, int tamanho2, int *vet
     j++;
   }
 
-  *tamanhoResultado = k;
+  *tamanhoResultado = k; // Define o tamanho do vetor resultado
 }
 
+// Função para encontrar elementos repetidos entre dois vetores
 void encontrarRepeticoes(int *vetor1, int tamanho1, int *vetor2, int tamanho2, int *vetorResultado, int *tamanhoResultado)
 {
-  int k = 0;
+  int k = 0; // Índice para vetorResultado
 
+  // Itera sobre todos os elementos de vetor1
   for (int i = 0; i < tamanho1; i++)
   {
+    // Para cada elemento de vetor1, verifica se está em vetor2
     for (int j = 0; j < tamanho2; j++)
     {
       if (vetor1[i] == vetor2[j])
       {
-        // Verifica se o elemento já foi inserido no vetor resultado
+        // Verifica se o elemento já está no vetorResultado
         int repetido = 0;
         for (int l = 0; l < k; l++)
         {
@@ -128,7 +159,7 @@ void encontrarRepeticoes(int *vetor1, int tamanho1, int *vetor2, int tamanho2, i
           }
         }
 
-        // Se não foi repetido, insere no vetor resultado
+        // Se não está repetido, adiciona ao vetorResultado
         if (!repetido)
         {
           vetorResultado[k++] = vetor1[i];
@@ -137,9 +168,10 @@ void encontrarRepeticoes(int *vetor1, int tamanho1, int *vetor2, int tamanho2, i
     }
   }
 
-  *tamanhoResultado = k;
+  *tamanhoResultado = k; // Define o tamanho do vetor resultado
 }
 
+// Função para listar os elementos de um vetor
 void listarVetor(int *vetor, int tamanho)
 {
   for (int i = 0; i < tamanho; i++)
@@ -151,14 +183,17 @@ void listarVetor(int *vetor, int tamanho)
 
 int main(int argc, char *argv[])
 {
-  int tamanhoMaximoPrimeiros = 20;
+  int tamanhoMaximoPrimeiros = 20; // Tamanho máximo dos primeiros vetores
   int primeiroVetor[tamanhoMaximoPrimeiros];
   int segundoVetor[tamanhoMaximoPrimeiros];
 
   /* Parte - a */
+  // Inserção de valores nos vetores
   int tamanhoPrimeiroVetor = insercaoValoresTamanhoVetor(tamanhoMaximoPrimeiros, primeiroVetor);
   int tamanhoSegundoVetor = insercaoValoresTamanhoVetor(tamanhoMaximoPrimeiros, segundoVetor);
+
   /* Parte - d */
+  // Exibe os vetores sem ordem
   printf("Sem Ordem - Primeiro Vetor: ");
   listarVetor(primeiroVetor, tamanhoPrimeiroVetor);
 
@@ -167,6 +202,7 @@ int main(int argc, char *argv[])
   listarVetor(segundoVetor, tamanhoSegundoVetor);
 
   /* Parte - b */
+  // Ordena os vetores
   ordernarVetor(tamanhoPrimeiroVetor, primeiroVetor);
   /* Parte - d */
   printf("Ordenado - Primeiro Vetor: ");
@@ -179,17 +215,19 @@ int main(int argc, char *argv[])
   listarVetor(segundoVetor, tamanhoSegundoVetor);
 
   /* Parte - c.1 */
+  // Tamanho máximo do vetor resultante da mesclagem
   int tamanhoMaximoUltimos = 40;
   int terceiroVetor[tamanhoMaximoUltimos];
-  int tamanhoRealTerceiroVetor = 0; // Variável para armazenar o tamanho real do vetor mesclado
-
-  mergeVetores(primeiroVetor, tamanhoPrimeiroVetor, segundoVetor, tamanhoSegundoVetor, terceiroVetor, &tamanhoRealTerceiroVetor);
+  int tamanhoRealTerceiroVetor = 0;
 
   /* Parte - d */
+  // Mescla os dois vetores ordenados
+  mergeVetores(primeiroVetor, tamanhoPrimeiroVetor, segundoVetor, tamanhoSegundoVetor, terceiroVetor, &tamanhoRealTerceiroVetor);
   printf("Merge (Primeiro e o Segundo vetor) - Terceiro Vetor: ");
   listarVetor(terceiroVetor, tamanhoRealTerceiroVetor);
 
   /* Parte - c.2 */
+  // Encontra os elementos repetidos entre os dois vetores
   int quartoVetor[tamanhoMaximoUltimos];
   int tamanhoRealQuartoVetor = 0;
   encontrarRepeticoes(primeiroVetor, tamanhoPrimeiroVetor, segundoVetor, tamanhoSegundoVetor, quartoVetor, &tamanhoRealQuartoVetor);
