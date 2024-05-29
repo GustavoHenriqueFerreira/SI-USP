@@ -1,6 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/*********************************************************************/
+/**   ACH2001 - Introdução à Programação                            **/
+/**   EACH-USP - Primeiro Semestre de 2024                          **/
+/**   Turma: 04 - Prof: Marcelo Morandini                           **/
+/**   Primeiro Exercí­cio-Programa                                   **/
+/**                                                                 **/
+/**   Integrantes                                                   **/
+/**   - Daniel Lima; nº usp: 9331249                                **/
+/**   - Guilherme Padun; nº usp: 13828007                           **/
+/**   - Gustavo Henrique; nº usp: 15674466                          **/ 
+/**                                                                 **/
+/*********************************************************************/
+
 // Função para inserir valores no vetor até o tamanho máximo especificado
 int insercaoValoresTamanhoVetor(int tamanhoMaximo, int vetor[])
 {
