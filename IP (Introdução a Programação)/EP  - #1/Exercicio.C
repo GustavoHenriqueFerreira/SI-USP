@@ -4,7 +4,7 @@
 /*********************************************************************/
 /**   ACH2001 - Introdução à Programação                            **/
 /**   EACH-USP - Primeiro Semestre de 2024                          **/
-/**   Turma: 04 - Prof: Marcelo Morandini                           **/
+/**   Turma: 2024194 - Prof: Marcelo Morandini                      **/
 /**   Primeiro Exercí­cio-Programa                                   **/
 /**                                                                 **/
 /**   Integrantes                                                   **/
