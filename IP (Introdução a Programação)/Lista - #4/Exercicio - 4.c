@@ -1,41 +1,61 @@
 #include <stdio.h>
-#include <stdlib.h>
 
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
-
-int verificarPalindromo(short int palindromo) {
-    if (palindromo <= 0){
-        printf("Numero não é positivo");
-        return 0;
-    }
-
-    short int palindromoOriginal = palindromo;
-    short int palindromoAoContrario = 0;
-
-    while (palindromo > 0) {
-        int unidade = palindromo % 10;
-        palindromoAoContrario = palindromoAoContrario * 10 + unidade;
-        palindromo = palindromo / 10;
-    }
-
-    if (palindromoOriginal == palindromoAoContrario) {
-        return 1;
-    } else {
-        return 0;
+void preencherVetor(int tamanho, int vetor[], char nomeVetor) {
+    printf("Preenchendo o vetor %c:\n", nomeVetor);
+    for (int i = 0; i < tamanho; i++) {
+        printf("Elemento %d: ", i + 1);
+        scanf("%d", &vetor[i]);
     }
 }
 
-int main(int argc, char const *argv[])
-{
-    short int palindromo;
-    printf("Digite um numero para verificar se e palindromo: ");
-    scanf("%hd", &palindromo);
+void encontrarRepetidos(int tamanho1, int vetor1[], int tamanho2, int vetor2[]) {
+    printf("\nElementos encontrados no vetor 1 que estao no vetor 2:\n");
+    for (int i = 0; i < tamanho1; i++) {
+        int encontrado = 0;
+        for (int j = 0; j < i; j++) {
+            if (vetor1[j] == vetor1[i]) {
+                encontrado = 1;
+                break;
+            }
+        }
 
-    if (verificarPalindromo(palindromo)) {
-        printf("%hd e um palindromo\n", palindromo);
-    } else {
-        printf("%hd nao e um palindromo\n", palindromo);
+        if (encontrado) {
+            continue;
+        }
+
+        for (int j = 0; j < tamanho2; j++) {
+            if (vetor2[j] == vetor1[i]) {
+                printf("%d\n", vetor1[i]);
+                break;
+            }
+        }
     }
+}
+
+int main() {
+    int tamanhoVetor1, tamanhoVetor2;
+    int vetor1[20], vetor2[20];
+
+    printf("Digite o tamanho do vetor 1 (maximo %d): ", 20);
+    scanf("%d", &tamanhoVetor1);
+
+    if (tamanhoVetor1 <= 0 || tamanhoVetor1 > 20) {
+        printf("Tamanho do vetor 1 invalido!\n");
+        return 1;
+    }
+
+    printf("Digite o tamanho do vetor 2 (maximo %d): ", 20);
+    scanf("%d", &tamanhoVetor2);
+
+    if (tamanhoVetor2 <= 0 || tamanhoVetor2 > 20) {
+        printf("Tamanho do vetor 2 invalido!\n");
+        return 1;
+    }
+
+    preencherVetor(tamanhoVetor1, vetor1, '1');
+    preencherVetor(tamanhoVetor2, vetor2, '2');
+
+    encontrarRepetidos(tamanhoVetor1, vetor1, tamanhoVetor2, vetor2);
 
     return 0;
 }
