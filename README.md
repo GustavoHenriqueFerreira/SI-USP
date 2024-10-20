@@ -10,11 +10,10 @@ Disciplinas que cursei durante minha Graduação de Sistemas de Informação na 
  - Sociedade, Multiculturalismo e Direitos - Cultura Digital
 
 2º sem
-
-Introdução à Análise de Algoritmos
-Cálculo II
-Matemática Discreta I
-Algoritmos e Estruturas de Dados I
-Matrizes, Vetores e Geometria Analítica
+ - Introdução à Análise de Algoritmos
+ - Cálculo II
+ - Matemática Discreta I
+ - Algoritmos e Estruturas de Dados I
+ - Matrizes, Vetores e Geometria Analítica
 
 Por vir...
