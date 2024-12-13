@@ -1,0 +1,20 @@
+https://en.wikipedia.org/wiki/Graph_theory - daqui só uso a definição de grafos 
+
+https://en.wikipedia.org/wiki/Glossary_of_graph_theory - este é um glossário que contém termos e suas definições em Teoria de Grafos.
+
+https://en.wikipedia.org/wiki/Tree_(data_structure) - estas são as árvores, das quais estudaremos as árvores binárias
+
+https://en.wikipedia.org/wiki/Binary_tree - árvores binárias
+
+Em IAA, árvores binárias são importante no escopo do heap-sort e na demonstração da cota inferior para algoritmos de ordenação.
+
+O que devemos saber demonstrar:
+
+uma árvore binária completa de altura h tem 2h+1−1
+ nós
+
+uma árvore binária completa de altura h tem 2h
+ folhas
+
+um heap (árvore binária completa até o penúltimo nível) de altura h tem ao menos 2h−1
+ folhas (verificar - posso estar enganado)
