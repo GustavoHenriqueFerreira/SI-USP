@@ -16,4 +16,11 @@ Disciplinas que cursei durante minha Graduação de Sistemas de Informação na 
  - Algoritmos e Estruturas de Dados I
  - Matrizes, Vetores e Geometria Analítica
 
+3º sem
+ - Computação Orientada a Objetos
+ - Organização e Arquitetura de Computadores I
+ - Algoritmos e Estruturas de Dados II
+ - Introdução à Estatística
+ - Introdução à Administração e Economia para Computação
+
 Por vir...
