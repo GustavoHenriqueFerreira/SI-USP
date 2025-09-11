@@ -1,7 +1,5 @@
 public class Simulacao {
-
     public void simulaEscalonador(){
-
         LeituraPrograma.apagarLogs();
 
         //Tentar diferentes quantuns
@@ -17,9 +15,6 @@ public class Simulacao {
             escalonador.logFinal();
 
             System.out.println("********** FINALIZANDO SIMULACAO ************* QUANTUM = " + i);
-
         }
-
     }
-
 }

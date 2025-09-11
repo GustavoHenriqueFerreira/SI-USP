@@ -1,12 +1,4 @@
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.*;
-import java.util.*;
-
 public class Instrucoes {
-
     BlocoDeControleDeProcessos bcp;
     int quantum;
     int cont;
@@ -17,8 +9,6 @@ public class Instrucoes {
         this.quantum = quantum;
     }
 
-
-
     //Compara as instrucoes e executa os comandos
     public void processaInstrucoes() throws Exception{
 
@@ -26,9 +16,7 @@ public class Instrucoes {
 
         instrucoesExecutadas = 0;
 
-
         for(int i = 0; i < quantum; i++){
-
             //Obtem a instrucao a ser executada
             String instrucao = bcp.getInstrucoesDoPrograma().get(bcp.getContador());
 
@@ -36,33 +24,24 @@ public class Instrucoes {
             bcp.incrementaContador();
             instrucoesExecutadas++;
 
-
             if (instrucao.startsWith("X"))
                 this.instrucaoX(Integer.parseInt(instrucao.substring(instrucao.indexOf("=")+1, instrucao.length())));
-
 
             if (instrucao.startsWith("Y"))
                 this.instrucaoY(Integer.parseInt(instrucao.substring(instrucao.indexOf("=")+1, instrucao.length())));
 
-
             if (instrucao.equals("E/S")){
-
                 if(cont == 0){
                     this.tempo = i+1;
                     this.cont++;
                 }
 
                 chamadaAoSO();
-
             }
-
-
 
             if (instrucao.equals("COM")) instrucaoCOM();
 
-
             if(instrucao.equals("SAIDA")){
-
                 if(cont == 0){
                     this.tempo = i+1;
                     this.cont++;
@@ -70,20 +49,13 @@ public class Instrucoes {
                 }
 
                 throw new Exception("SAIDA");
-
             }
-
-
-
-
         }
 
         if(cont == 0) this.tempo = quantum;
 
         this.cont = 0;
     }
-
-
 
     //1° Instrucao de atribuicao no registrador
     public void instrucaoX(int x){
@@ -94,13 +66,11 @@ public class Instrucoes {
         bcp.setRegistradorY(y);
     }
 
-
     //2° Instrucao Chamada ao SO
     public void chamadaAoSO() throws Exception{
         bcp.setEstadoProcesso("Bloqueado");
         throw new Exception("E/S");
     }
-
 
     //3° Tarefa executada pela maquina
     //Pode executar um comando comum e simples
@@ -110,7 +80,6 @@ public class Instrucoes {
         return bcp.getContador() >= bcp.getInstrucoesDoPrograma().size();
     }
 
-
     public int getTempo(){
         return this.tempo;
     }
@@ -118,6 +87,4 @@ public class Instrucoes {
     public int getInstrucoesExecutadas(){
         return instrucoesExecutadas;
     }
-
-
 }
