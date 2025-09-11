@@ -23,4 +23,11 @@ Disciplinas que cursei durante minha Graduação de Sistemas de Informação na 
  - Introdução à Estatística
  - Introdução à Administração e Economia para Computação
 
+4º sem
+ - Sistemas Operacionais
+ - Bancos de Dados I
+ - Redes de Computadores
+ - Métodos Quantitativos para Análise Multivariada
+ - Organização e Arquitetura de Computadores II
+
 Por vir...

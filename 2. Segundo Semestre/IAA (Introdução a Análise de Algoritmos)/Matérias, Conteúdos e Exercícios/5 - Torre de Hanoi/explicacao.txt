@@ -1,0 +1,23 @@
+Creio que Torre de Hanói seja um brinquedo/quebra-cabeças/jogo conhecido por vocês, por isso escolhi este programa (hanoi.c) para começar a falar sobre recursividade.
+
+
+
+Para quem quer relembrar o brinquedo:
+
+https://pt.wikipedia.org/wiki/Torre_de_Han%C3%B3i
+
+https://en.wikipedia.org/wiki/Tower_of_Hanoi
+
+
+
+Os aspectos do algoritmo que resolve o problema e que nos interessam na aula são:
+
+
+
+Chega-se a uma solução através de um processo de indução finita (a demonstração de que a solução é correta induz o algoritmo);
+Partindo de um algoritmo/programa que chega à solução (portanto correto), induzido pelo processo de indução finita, permite associar, linha a linha (ou bloco de código a bloco de código) o programa aos passos do processo de indução finita;
+Indução finita é uma forma de demonstrar a corretude de algoritmos (geralmente é mais fácil aplicá-la a algoritmos recursivos);
+Obter a complexidade de tempo do algoritmo traz alguma novidade;
+A expansão da sequência que corresponde à função de complexidade de tempo traz alguma novidade;
+Chegar a uma fórmula fechada que corresponde à função de complexidade de tempo traz alguma novidade;
+Em seguida, problemas/algoritmos mais simples (e menos atraentes) podem ser usados para apresentar os conceitos e conectá-los com os programas (e com como recursividade é implementada em um computador e com como um programador poderia ter um vislumbre do funcionamento dessa implementação (acontece que isto implica em acrescentar código e variáveis que não tem a ver com o problema/algoritmo)). 

@@ -1,0 +1,13 @@
+1.      Apresente um programa na linguagem C que execute as seguintes rotinas
+
+a.      Crie um vetor de inteiros de até 20 posições e inclua (via digitação) os valores para cada uma delas.
+
+b.      Apresente na tela: o maior elemento do vetor (e sua posição), o menor elemento do vetor (e sua posição), a soma de todos os elementos do vetor e a média deles
+
+c.      Elabore uma rotina que entre com um inteiro (variável x) como parâmetro. Indique quantas vezes o valor dessa variável x aparece entre os elementos do vetor e em quais posições
+
+2.      Apresente um programa similar ao do exercício 1 só que dessa vez os elementos do vetor são apenas inteiros >= 0. Caso seja inserido um valor negativo, deve-se parar de inserir elementos no vetor. (cuidado para não inserir o valor negativo). Os itens a, b e c do exercício 1 também devem ser realizados
+
+3.      Apresente um programa na linguagem C que crie e insira os elementos em dois vetores distintos de inteiros de tamanho máximo 20 elementos. Este programa deve indicar quais elementos que estão no vetor 1 são repetidos no vetor 2. Para esse exercício assuma que não há repetições de elementos no vetor 1.
+
+4.      Apresente um programa similar ao do exercício 3 mas dessa vez podem haver repetições de elementos no vetor 1. Nesse caso, apenas um dos elementos do vetor 1 deve ser considerado para a análise

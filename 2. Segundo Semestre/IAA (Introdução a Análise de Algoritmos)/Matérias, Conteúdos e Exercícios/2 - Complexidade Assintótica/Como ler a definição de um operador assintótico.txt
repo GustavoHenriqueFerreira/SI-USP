@@ -1,0 +1,18 @@
+Percebi uma dificuldade (recorrente) enfrentada pelos alunos na disciplina Análise de Algoritmos: "Como expressar, em linguagem natural, a definição de O-grande." (e dos outros operadores assintóticos)
+
+Como trata-se de uma fronteira entre linguagem matemática e linguagem natural, torna-se possível certa frouxidão dos significados (consequentemente frouxidão da expressão), na minha opinião, derivada da linguagem natural utilizada.
+
+A expressão matemática (fórmula) usada no livro para definir O-grande é: O(g(n)):{f(n):existem constantes positivas c e n0tais que 0≤f(n)≤c∗g(n) para todo n≥n0}
+ (obs.: há uma certa mistura de expressões em linguagem natural com expressões matemáticas)
+
+obs2.: latex da fórmula: O(g(n)) : \{f(n): \textrm{existem constantes positivas }c \textrm{ e }n_0 \textrm{tais que } 0 \le f(n) \le c*g(n) \textrm{ para todo } n \ge n_0\}
+
+A leitura (que faço) da definição de O-grande é:
+
+Usa-se O(g(n)) para denotar o conjunto formada pelas funções, que serão notadas pela letra f nesta definição. As f são tais que, dadas as constantes positivas c e n0, a desigualdade 0<=f(n)<=c*g(n) se verifica para todo n maior que n0.
+
+*nota*: o uso de f na definição vale dentro da definição. O funcionamento de variáveis (locais) declaradas no escopo de funções em programas é inspirado nesse funcionamento das variáveis em matemática.
+
+*nota*: g pode ser pensado como um argumento (parâmetro) de O-grande. O funcionamento de argumentos (parâmetros) de funções em linguagens de programação também é inspirado nesse funcionamento dos argumentos (parâmetros) em matemática.
+
+Receita: para demonstrar que uma função, f, pertence (é) O(g(n)), deve se mostrar, matematicamente, que existem constantes c e n0 que fazem a desigualdade ser verdadeira para essa f. Em geral, escolhe-se c e n0 (são hipóteses), substitui-se f e g na desigualdade e, com operações algébricas, chega-se a alguma hipótese ou a uma sentença "trivialmente" verdadeira. Uma sentença trivialmente verdadeira é, por exemplo, 1<2.

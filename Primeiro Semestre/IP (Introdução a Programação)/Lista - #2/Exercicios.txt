@@ -1,7 +1,0 @@
-Apresente, em português estruturado ou em código na linguagem C os algoritmos para:
-
-1. Entrar com N números inteiros e maiores ou iguais a zero e dizer qual foi o maior número entrado, qual o menor, a soma deles e a média. Os critérios de parada são: (a) Pode-se pedir para que se digite o valor de N e que se entre exatamente N números; ou (b)  um dos números digitados seja negativo
-
-2. Entrar com um número inteiro positivo e menor que 10.000 e informar o valor de sua casa na unidade, na dezena, na centena e no milhar
-
-3. Entrar com N números e entre os números digitados dizer: (a) quantos são divisíveis por 4; (b) quantos são divisíveis por 7; e (c) quantos são divisíveis por 13.

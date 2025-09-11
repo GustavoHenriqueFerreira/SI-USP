@@ -1,5 +1,0 @@
-ver slides do cap 2 do livro do Ziviani
-
-- resolver o problema do troco com um algoritmo guloso;
-
-- intuir a função de complexidade de tempo.

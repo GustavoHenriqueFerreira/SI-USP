@@ -1,4 +1,0 @@
-EP – 2
-
-Apresente (implementado) um programa em C que execute um jogo da velha entre dois jogadores (A e B).
-A cada jogada o programa deve informar se houve um vencedor. Caso as 9 posições da matriz (3x3) representativa do jogo da velha tenham sido preenchidas e não houve vencedor, o programa deve informar que houve empate

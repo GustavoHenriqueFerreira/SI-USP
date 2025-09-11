@@ -1,7 +1,0 @@
-Random Access Machine,
-
-Insertion Sort
-
-Aplicado ao guloso
-
-Aplicado ao tentativa e erro

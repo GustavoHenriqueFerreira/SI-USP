@@ -1,0 +1,3 @@
+Apresentar uma rotina em C que dadas duas strings, apresente-as de forma ordenada alfabeticamente
+
+A comparação precisa ser feita caracter a caracter das strings
