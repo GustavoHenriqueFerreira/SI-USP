@@ -46,11 +46,11 @@ public class GerenciadorEscalonador {
             listaDeProntos.add(processo);
 
             String log = "Carregando " + processo.getNomePrograma();
-            Log.gravarArquivoLog(quantum, log);
+            Log.gravarLog(quantum, log);
         }
     }
 
-    // Método principal do Escalonador Round Robin
+    // Metodo principal do Escalonador Round Robin
     public void executaRoundRobin() {
         System.out.println("INICIANDO ROUND ROBIN - QUANTUM = " + quantum);
 
@@ -69,7 +69,7 @@ public class GerenciadorEscalonador {
                     if (!instrucao.terminou()) {
                         // Log de início da execução
                         log = "Executando " + programa.getNomePrograma();
-                        Log.gravarArquivoLog(quantum, log);
+                        Log.gravarLog(quantum, log);
 
                         // Marca o processo como em execução
                         programa.setEstadoProcesso("Executando");
@@ -83,7 +83,7 @@ public class GerenciadorEscalonador {
 
                         // Log de interrupção após término do quantum
                         log = "Interrompendo " + programa.getNomePrograma() + " após " + instrucao.getInstrucoesExecutadas() + " instruções";
-                        Log.gravarArquivoLog(quantum, log);
+                        Log.gravarLog(quantum, log);
 
                         // Coloca o processo novamente como pronto
                         programa.setEstadoProcesso("Pronto");
@@ -125,11 +125,11 @@ public class GerenciadorEscalonador {
 
         log = "Interrompendo " + programaES.getNomePrograma() + " após " + instrucao.getInstrucoesExecutadas() + " instruções";
         System.out.println(log);
-        Log.gravarArquivoLog(quantum, log);
+        Log.gravarLog(quantum, log);
 
         log = "E/S iniciada em " + programaES.getNomePrograma();
         System.out.println(log);
-        Log.gravarArquivoLog(quantum, log);
+        Log.gravarLog(quantum, log);
 
         instrucoesExecutadas += instrucao.getInstrucoesExecutadas();
         trocas++;		//toda vez que chama o processaInstrucao e uma troca de contexto
@@ -152,7 +152,7 @@ public class GerenciadorEscalonador {
         trocas++;
 
         log = programaSaida.getNomePrograma() + " terminado. X=" + programaSaida.getRegistradorX() + ". Y=" + programaSaida.getRegistradorY();
-        Log.gravarArquivoLog(quantum, log);
+        Log.gravarLog(quantum, log);
     }
 
     //	3 (c) A cada processo que passe pelo estado executando,
@@ -227,12 +227,12 @@ public class GerenciadorEscalonador {
         String log;
 
         log = "MEDIA DE TROCAS: " + getMediaTrocasContexto();
-        Log.gravarArquivoLog(quantum, log);
+        Log.gravarLog(quantum, log);
 
         log = "MEDIA DE INSTRUCOES: " + getMediaInstrucoes();
-        Log.gravarArquivoLog(quantum, log);
+        Log.gravarLog(quantum, log);
 
         log = "QUANTUM: " + quantum;
-        Log.gravarArquivoLog(quantum, log);
+        Log.gravarLog(quantum, log);
     }
 }

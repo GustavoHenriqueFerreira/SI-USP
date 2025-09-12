@@ -12,7 +12,7 @@ class Escalonador {
         System.out.println("Iniciando simulacao...");
 
         Simulacao simula = new Simulacao();
-        simula.simulaEscalonador();
+        simula.simularEscalonador();
     }
 
     private static void executaEscalonador(){
