@@ -9,10 +9,10 @@ public class Simulacao {
 
             GerenciadorEscalonador gerenciadorEscalonador = new GerenciadorEscalonador(i);
 
-            gerenciadorEscalonador.carregandoProgramas();
-            gerenciadorEscalonador.executaRoundRobin();
+            gerenciadorEscalonador.carregarProgramas();
+            gerenciadorEscalonador.executarRoundRobin();
 
-            gerenciadorEscalonador.logFinal();
+            gerenciadorEscalonador.imprimirLogFinal();
 
             System.out.println("Fim Simulacao -- Quantum = " + i);
         }
